@@ -48,32 +48,32 @@ over 50 billion land animals and about one trillion marine animals are killed ea
 
 _[1] German numbers_
 
-1. Eating animals is instictual.
+- Eating animals is instictual.
 	- doing something because it appears to be instinctual doesn’t automatically make it right (e.g., murder or physical violence against other people could also be argued to be instinctual)
 	- humans are omnivores not carnivores
-	-  the industrial way we are producing meat and other animal products has nothing to do with the need of stone age people to hunt to stay alive
-	- 
-2. We have canine teeth to each meat.
+	- the industrial way we are producing meat and other animal products has nothing to do with the need of stone age people to hunt to stay alive
+	
+- We have canine teeth to each meat.
 	-  Our jaw, skeleton, muscles and digestive system are much more like those of herbivores than those of carnivores
 	-  (also: huge canine teeth does not mean that the body is designed to eat meat: for example hippos have the largest teeth in animal kingdom, but they are herbivores)
 	-  Would humans be able to kill, open up and eat a living animal uncooked by just using their teeth?
 
-3. Eating meat helped us develop large brains.
+-   Eating meat helped us develop large brains.
 	- Are obligate carnivores the most intelligent animals on the planet?
 		- Not sure, but let’s assume it is true. Should we keep eating it?
 		- From a scientific perspective: definitely not (research showed again and again that eating meat is detrimental to our health)
-
-4. We’ve always been eating animals.
+		
+-  We’ve always been eating animals.
 	- False: our physiology developed since the Miocene (20 Million Years ago) where we ate plants exclusively
 		- only since the Paleolithic (2 Million Years ago) we started to use tools
 	- doing something wrong for a long time doesn’t mean that we should continue doing it (example: people killing each other in all of human history. Is it a good thing then?)
 
-5. Animals eat other animals.
+-  Animals eat other animals.
 	- Humans are not obligate carnivores (don’t HAVE to eat meat) à silly to compare us to animals that can ONLY digest meat
 	- Just because animals do something, doesn’t mean we have to adopt it (e.g., kill other people, smell each others butts when we meet, …)
 	- predators have an important role in the food chain, and thus are needed to preserve ecosystems à how we are producing animals for their meat and other products has nothing in common with a food chain and is harmful for many ecosystems
 
-6. Vegans aren’t healthy.
+-  Vegans aren’t healthy.
 	- Several studies showed that this is nothing but a myth
 	- In fact, vegans are generally healthier than non-vegans
 	- Also studies that show evidence to the contrary, but nearly all of them were funded by the meat, dairy and egg industries à intentionally bad design to manipulate their results
@@ -81,17 +81,17 @@ _[1] German numbers_
 		- methodology is a key factor
 		- several studies need to be evaluated simultaneously à results that show the same trend in all studies can be seen as relatively significant
 
-7. Vegans kill plants.
+-  Vegans kill plants.
 	- Ethical argument against veganism
 		- But: by eating animals, we are actually harming many times more plants than by eating plants directly (depending on the animal in question, it takes 3-20 pounds of vegetable protein to produce just one pound of animal protein)
 	- Vegans kill far fewer plants than meat eaters
 
-8. Killing animals humanely is ok.
+-  Killing animals humanely is ok.
 	- There is no humane way to kill someone, especially if it doesn’t serve the purpose to survive or to live in good health
 	- “if an animal had a good life before it was murdered, and its murder was executed as fast and painlessly as possible, then there’s nothing wrong with that at all” à comparable to “raping another human is ok, if you treated them well first”
 	-  “it is okay, if I know, where the meat is coming from” à in the U.S. 99 % of all animals are in factory farms _([2] source and explanation of factory farms)_
 
-9. Eating dairy or eggs doesn’t harm animals.
+-  Eating dairy or eggs doesn’t harm animals.
 	- Dairy and egg industries are as cruel as meat industry
 	- Dairy industry:
 		- _Why do you think cows produce milk?_
@@ -104,35 +104,35 @@ _[1] German numbers_
 		- Immensely tiresome and unhealthy for hens (some of them even die in the process)
 		- Once their egg production wanes (after about 18 to 24 months), they are killed and their meat is sold.
 
-10. If we didn’t breed animals, they wouldn’t have a life.
+-  If we didn’t breed animals, they wouldn’t have a life.
 	- Bringing an animal to life just to exploit, abuse and kill it, does not make it ethical.
 	-  We need to think about what happens to all the animals that are alive already if everyone turned vegan one day to another. But the world’s population won’t turn vegan overnight. Rather, it will gradually transition to eating a plant-based diet over the course of decades or even centuries. à less demand for animal products à less animals will be bred into existence
 
-11. If we didn’t eat animals, they would overpopulate the planet and starve to death.
+-  If we didn’t eat animals, they would overpopulate the planet and starve to death.
 	- “_If we didn’t slaughter animals to eat them, they would suffer and die_.”
 	-  World’s population won’t turn vegan overnight. Rather, it will gradually transition to eating a plant-based diet over the course of decades or even centuries. à less demand for animal products à less animals will be bred into existence
 
-12. Meat is tasty.
+-  Meat is tasty.
 	- Momentary taste-pleasure shouldn’t be more important than the life of another animal
 		- Unnecessary exploitation, torture and murder of animals
 	- at the moment, we are not asking the people to stop eating meat altogether, but first we try to make them reduce (at least for lunch in the Mensa)
 
-13. Vegan food is expensive.
+-  Vegan food is expensive.
 	- Depends on the kind of vegan food
 	- Processed vegan foods (such as meat substitutes) can be expensive
 	- Vegan foods such as grains, legumes, seasonal, locally grown fruits and vegetables à diet will most likely be cheaper than a diet that includes animal products
 		- Study of Oxford University (The Lancet Planetary Health) [3]
 	-  almost every day the vegan option is the cheapest one in the Mensa (1,95 € for students, 3,85 € for employees)
 
-14. You can’t be perfect vegan.
+-  You can’t be perfect vegan.
 	- Can’t completely avoid using things that either were partly made using animal products or have animal exploitation involved in their production (e.g., industrial glue)
 	- No reason for not doing as much as you can. (If the world cannot be 100 % violent-free, we should still care about the immense violence that exists in society)
 	- Veganism, by definition, is not about eliminating suffering, but about reducing it as much as practically possible.
 
-15. It is my personal choice.
+-  It is my personal choice.
 	- Personal freedom stops when you start to affect the lives/freedom of others: animals by killing them and other people by contributing to the climate crisis.
 
-16. One person can’t make a difference.
+-  One person can’t make a difference.
 	- It is true, that one person’s choice will not save the climate. In terms of animal cruelty, every reduction makes a difference.
 	- But most important: We are talking about a large kitchen which is supplying thousands of people with lunch every day. It is a substantial change in terms of reduction of greenhouse gas emissions, animal welfare and your own personal health.
 	- the influence a change in Mensa food can have on their customers or people around them can even amplify this effect.
