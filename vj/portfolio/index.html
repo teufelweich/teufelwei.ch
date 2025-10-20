@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Outlandish Festival 2025 — Hoa Binh, Vietnam</title>
+  <style>
+    /* Keep the root variables - all are used */
+    :root{
+      --gap:24px;
+      --max-width:1200px;
+      --bg:#000;
+      --fg:#fff;
+      --muted:#bfbfbf;
+    }
+
+    /* Base styles - simplified */
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* Layout containers */
+    .center {
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+    }
+    .grid {
+      display:flex;
+      gap:var(--gap);
+      align-items:stretch;
+    }
+
+    /* Media/Video styles */
+    .media {
+      flex:1 1 640px;
+      display:flex;
+    }
+    .video-wrapper {
+      position:relative;
+      background:#000;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 6px 24px rgba(0,0,0,0.6);
+    }
+    .video-wrapper iframe {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+    .media .video-wrapper {
+      flex:1;
+      height:100%;
+    }
+    .text .video-wrapper {
+      width:100%;
+      padding-top:56.25%;
+      margin-top:var(--gap);
+    }
+
+    /* Text section */
+    .text {
+      flex:0 0 360px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    h2{ margin:0; font-size:1.75rem; }
+    h3{
+      margin:0;
+      color:var(--muted);
+      font-weight:500;
+      font-size:1rem;
+    }
+    p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+      text-align:justify;
+    }
+
+    /* Mobile layout */
+    @media (max-width:880px) {
+      .center { padding:var(--gap); }
+      .grid { flex-direction:column; }
+      .text, .media { width:100%; }
+      .media .video-wrapper { padding-top:56.25%; height:auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="wrap">
+      <div class="grid">
+        <div class="media">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1128977117?badge=0&autopause=0&player_id=0&app_id=58479"
+                    title="heutemitmapping @ Outlandish Festival 2025 (Vietnam)"
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="text">
+          <h2>Outlandish Festival 2025</h2>
+          <h3>Hoa Binh, Vietnam</h3>
+          <p>
+            A visual exploration presented at <a href="https://outlandishfest.com/" style="color: var(--fg); text-decoration: underline; text-decoration-color: var(--muted);">Outlandish Festival 2025</a>.
+            This piece combines projection mapping, structural geometry and live performance to transform
+            space and perception. Originally shown in Hoa Binh, Vietnam.
+          </p>
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1128982799?badge=0&autopause=0&player_id=0&app_id=58479"
+                    title="heutemitmapping @ Outlandish Festival 2025 (Vietnam)"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+</html>
