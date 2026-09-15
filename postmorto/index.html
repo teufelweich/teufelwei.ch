@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Camera Viewer</title>
+<style>
+  :root{
+    /* Screen (LCD) position as a fraction of the cam.png image, calibrated
+       to the supplied camera photo. If you swap in a different cam.png,
+       re-measure these four numbers (0-1) against your image. */
+    --screen-left: 0.152;
+    --screen-top: 0.48;
+    --screen-width: 0.473;
+    --screen-height: 0.426;
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body{
+    margin:0; padding:0; width:100%; height:100%;
+    background:#000; overflow:hidden;
+    touch-action: manipulation;
+    -webkit-user-select:none; user-select:none;
+  }
+
+  #app{
+    position:fixed; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:#000;
+  }
+
+  #stage{
+    position:relative;
+    /* width/height set by JS to fit viewport while keeping cam.png ratio */
+  }
+
+  #camImg{
+    display:block;
+    width:100%; height:100%;
+    -webkit-user-drag:none;
+    pointer-events:none;
+  }
+
+  #screen{
+    position:absolute;
+    left:   calc(var(--screen-left)   * 100%);
+    top:    calc(var(--screen-top)    * 100%);
+    width:  calc(var(--screen-width)  * 100%);
+    height: calc(var(--screen-height) * 100%);
+    overflow:hidden;
+    background:#050505;
+    cursor:pointer;
+  }
+
+  #photo{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    display:none;
+  }
+  #photo.active{ display:block; }
+
+  #counter{
+    position:absolute;
+    right:3%; bottom:2%;
+    font: 500 2.3vh/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color:rgba(255,255,255,0.55);
+    text-shadow:0 0 3px rgba(0,0,0,0.9);
+    pointer-events:none;
+    letter-spacing:0.5px;
+  }
+
+  #message{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:6%;
+    color:#ccc;
+    font: 400 2vh/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  #rotate{
+    position:fixed; inset:0; z-index:10;
+    display:none;
+    align-items:center; justify-content:center;
+    background:#000; color:#eee;
+    text-align:center; padding:8%;
+    font: 400 4vw/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  @media (orientation: portrait){
+    #rotate{ display:flex; }
+    #app{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+  <div id="rotate">Please rotate your device to landscape</div>
+
+  <div id="app">
+    <div id="stage">
+      <img id="camImg" src="cam.png" alt="camera" draggable="false">
+      <div id="screen">
+        <img id="photo" alt="photo">
+        <div id="message"></div>
+        <div id="counter"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+
+  var stage   = document.getElementById('stage');
+  var camImg  = document.getElementById('camImg');
+  var screenEl= document.getElementById('screen');
+  var photoEl = document.getElementById('photo');
+  var counter = document.getElementById('counter');
+  var message = document.getElementById('message');
+
+  var images = [];      // resolved image paths, in numeric order
+  var index  = -1;       // current index into images[]
+
+  // ---------- Stage sizing: fit viewport while keeping cam.png's ratio ----------
+  var camRatio = 4 / 3; // fallback until the real image reports its size
+
+  function layout(){
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+    var targetRatio = camRatio;
+    var w = vw, h = vw / targetRatio;
+    if (h > vh){ h = vh; w = vh * targetRatio; }
+    stage.style.width  = w + 'px';
+    stage.style.height = h + 'px';
+  }
+
+  camImg.addEventListener('load', function(){
+    if (camImg.naturalWidth && camImg.naturalHeight){
+      camRatio = camImg.naturalWidth / camImg.naturalHeight;
+    }
+    layout();
+  });
+  if (camImg.complete && camImg.naturalWidth) {
+    camRatio = camImg.naturalWidth / camImg.naturalHeight;
+    layout();
+  }
+
+  window.addEventListener('resize', layout);
+  window.addEventListener('orientationchange', function(){ setTimeout(layout, 50); });
+
+  // Best-effort landscape lock (works only inside fullscreen on browsers
+  // that support the Screen Orientation API; silently ignored otherwise).
+  document.addEventListener('click', function tryLock(){
+    document.removeEventListener('click', tryLock);
+    try{
+      var el = document.documentElement;
+      var req = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (req){
+        req.call(el).then(function(){
+          if (screen.orientation && screen.orientation.lock){
+            screen.orientation.lock('landscape').catch(function(){});
+          }
+        }).catch(function(){});
+      }
+    }catch(e){}
+  }, { once:true });
+
+  // ---------- Discover images: img/1.jpg, img/2.jpg, ... until one 404s ----------
+  function probe(n){
+    return new Promise(function(resolve){
+      var img = new Image();
+      img.onload  = function(){ resolve(true); };
+      img.onerror = function(){ resolve(false); };
+      img.src = 'img/' + n + '.jpg';
+    });
+  }
+
+  function discover(){
+    var n = 1;
+    function step(){
+      return probe(n).then(function(ok){
+        if (ok){
+          images.push('img/' + n + '.jpg');
+          n++;
+          return step();
+        }
+      });
+    }
+    return step();
+  }
+
+  function showMessage(text){
+    message.textContent = text;
+    message.style.display = 'flex';
+    photoEl.classList.remove('active');
+    counter.textContent = '';
+  }
+
+  function render(){
+    if (!images.length){
+      showMessage('No images found in ./img');
+      return;
+    }
+    message.style.display = 'none';
+    photoEl.src = images[index];
+    photoEl.classList.add('active');
+    counter.textContent = (index + 1) + ' / ' + images.length;
+  }
+
+  function goTo(newIndex){
+    if (newIndex < 0 || newIndex >= images.length) return; // no wrap-around
+    index = newIndex;
+    render();
+  }
+
+  screenEl.addEventListener('click', function(e){
+    if (!images.length) return;
+    var rect = screenEl.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    if (x < rect.width / 2){
+      goTo(index - 1);
+    } else {
+      goTo(index + 1);
+    }
+  });
+
+  showMessage('Loading…');
+  discover().then(function(){
+    if (images.length){
+      index = 0;
+      render();
+    } else {
+      showMessage('No images found in ./img');
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
